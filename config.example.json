@@ -1,0 +1,18 @@
+{
+  "jellyfin_url": "http://jellyfin:8096",
+  "jellyfin_api_key": "PASTE_A_JELLYFIN_API_KEY_HERE",
+  "data_dir": "./data",
+  "language": "en",
+  "timezone": "",
+  "host": "127.0.0.1",
+  "port": 8097,
+  "threads": 16,
+  "background_jobs": true,
+  "audiomuse_url": "",
+  "lastfm_api_key": "",
+  "lastfm_api_secret": "",
+  "updates_dir": "",
+  "catalog_stream_command": [],
+  "podcast_country": "US",
+  "contact": ""
+}

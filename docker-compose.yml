@@ -1,0 +1,13 @@
+services:
+  pudim-server:
+    build: .
+    container_name: pudim-server
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PUDIM_DATA_DIR: /data
+    volumes:
+      - ./data:/data
+      # - ./updates:/updates:ro   # optional: app update files (set PUDIM_UPDATES_DIR=/updates)
+    ports:
+      - "127.0.0.1:8097:8097"     # put a reverse proxy with HTTPS in front of it

@@ -1,0 +1,18 @@
+# local configuration and secrets
+config.json
+.env
+# runtime data (SQLite databases, JSON state, caches, logs)
+data/
+*.db
+*.db-*
+*.sqlite*
+*.log
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/

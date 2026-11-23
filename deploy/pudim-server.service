@@ -1,0 +1,23 @@
+# Example systemd unit. Adjust User, WorkingDirectory and paths, then:
+#   sudo cp deploy/pudim-server.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now pudim-server
+[Unit]
+Description=Pudim server (companion for the Pudim music player)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pudim
+WorkingDirectory=/srv/pudim-server
+Environment=PUDIM_CONFIG=/srv/pudim-server/config.json
+ExecStart=/srv/pudim-server/.venv/bin/pudim-server
+Restart=on-failure
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/pudim-server/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

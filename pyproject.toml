@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pudim-server"
+version = "0.1.0"
+description = "Optional companion server for the Pudim music player for Jellyfin: chat, Jam, Blend, mixes, recap, podcasts and more."
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.10"
+dependencies = ["flask>=3.0", "waitress>=3.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+pudim-server = "pudim_server.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/thiago-slb/pudim-server"
+Client = "https://github.com/thiago-slb/pudim-music"
+
+[tool.setuptools]
+packages = ["pudim_server"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
